@@ -1,0 +1,16 @@
+{
+  "name": "schema-generator",
+  "version": "1.0.0",
+  "description": "A tool to instrospect a database then produce a JSON Schema",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "Warren layson",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.9.1"
+  }
+}
