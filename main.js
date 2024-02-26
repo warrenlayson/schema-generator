@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const mysql = require('mysql2/promise')
 const fs = require('node:fs/promises')
 const path = require('node:path')
@@ -88,11 +90,15 @@ async function writeOutput(schemas) {
 }
 
 function toTitleCase(string) {
-    console.log(string)
     return string.split("_").map(a => a[0].toUpperCase() + a.slice(1)).join(" ")
 }
 
-main().catch(error => {
+main()
+.then(() => {
+    console.log("Introspect complete. Please review in the out directory")
+    process.exit(0)
+})
+.catch(error => {
     if (error) {
         console.error(error)
         process.exit(1)
